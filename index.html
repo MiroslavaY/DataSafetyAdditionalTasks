@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/templates/documentation.js"></script>
+    <script src="js/templates/fairytale.js"></script>
+    <script src="js/templates/interview.js"></script>
+    <script src="js/solutions/xor.js"></script>
+    <script src="js/solutions/vernam.cipher.js"></script>
+    <script src="js/solutions/statistics.js"></script>
+    <script src="js/solutions/caesar.cipher.js"></script>
+    <title>Tasks</title>
+</head>
+<body>
+<head>
+    <h1>Data safety tasks</h1>
+</head>
+<main>
+    <section>
+        <h2>1. Реализовать шифрование методом одноразовый блокнот.</h2>
+        <input id="vernam-cipher-source" type="text" placeholder="Please, enter the text">
+        <input id="vernam-encrypt" type="button" value="Encrypt!"/>
+        <p>Key:</p>
+        <p id="vernam-key"></p>
+        <p>Encrypted text:</p>
+        <p id="vernam-encrypted-text"></p>
+        <input id="vernam-decrypt" type="button" value="Decrypt!"/>
+        <p>Decrypted text:</p>
+        <p id="vernam-decrypted-text"></p>
+    </section>
+    <section>
+        <h2>2. Реализовать XOR при помощи and, or, not.</h2>
+        <select data-handler="xor-input">
+            <option value="0">0</option>
+            <option value="1">1</option>
+        </select>
+        <select data-handler="xor-input">
+            <option value="0">0</option>
+            <option value="1">1</option>
+        </select>
+        <section id="xor-result">0</section>
+    </section>
+    <section>
+        <h2>3. Реализовать шифр Цезаря.</h2>
+        <input id="caesar-source-text" type="text" placeholder="Please, input only in english">
+        <p>Select a shift for encryption</p>
+        <input id="caesar-shift" type="number" min="1" max="32" value="1"/>
+        <input id="caesar-encrypt" type="button" value="Encrypt!"/>
+        <p>Encrypted text:</p>
+        <p id="caesar-encrypted-text"></p>
+        <input id="caesar-decrypt" type="button" value="Decrypt!"/>
+        <p>Decrypted text:</p>
+        <p id="caesar-decrypted-text"></p>
+    </section>
+    <section>
+        <h2>
+            4. Реализовать подсчет статистик криптограмм, полученых методом Цезаря.
+            Автоматизировать криптоанализ таких шифрограмм.
+        </h2>
+        <input id="caesar-stat-btn" type="button" value="Get statistic"/>
+        <p>Statistic for Caesar: </p>
+        <section class="caesar-statistic">
+            <div id="caesar-statistic"></div>
+            <div id="caesar-encrypted-statistic"></div>
+        </section>
+    </section>
+    <section>
+        <h2>5. Реализовать подсчет статистик встречаемости букв.Составить шаблоны для художественных произведений,
+            технической документации,
+            сказок, выступлений публичных лиц.
+        </h2>
+        <p>Select a template:</p>
+        <select class="template-select" id="templates">
+            <option value="none">none</option>
+            <option value="documentation">documentation</option>
+            <option value="fairytale">fairytale</option>
+            <option value="interview">interview</option>
+        </select>
+        <section class="templates-text">
+            <p>Current template: </p>
+            <div id="template-text"></div>
+        </section>
+        <section class="template-statistic">
+            <p>Current template statistic: </p>
+            <div id="template-statistic"></div>
+        </section>
+    </section>
+</main>
+</body>
+<script src="js/init.js"></script>
+</html>
